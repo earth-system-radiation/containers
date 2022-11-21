@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        uses: earth-system-radiation/containers@40c769b45cd6cb283623a701f9387152873da267
+        uses: actions/checkout@v0.0
       - name: List Dockerfiles
-        run: ls *
+        run: ls Dockerfile*

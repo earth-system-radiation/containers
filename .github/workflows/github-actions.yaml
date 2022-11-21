@@ -1,0 +1,8 @@
+name: RRTMGP Base Images Build
+run-name: CI/CD for RRTMGP images
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "just ran CI!"

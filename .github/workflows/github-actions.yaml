@@ -5,4 +5,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - run: ls Dockerfile*
+      - name: Check out repository code
+        uses: actions/checkout@cicd
+      - name: List Dockerfiles
+        run: ls Dockerfile*

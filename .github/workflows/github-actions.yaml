@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        uses: actions/checkout@cicd
+        uses: actions/checkout@6d919c30728dab8f9e76511bf71d8395d1ceaf91
       - name: List Dockerfiles
         run: ls Dockerfile*

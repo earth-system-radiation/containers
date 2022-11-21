@@ -5,7 +5,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      # - name: Check out repository code
-      #   uses: actions/checkout@https://github.com/earth-system-radiation/containers.git
+      - name: Check out repository code
+        uses: actions/checkout
       - name: List Dockerfiles
-        run: docker images
+        run: ls Dockerfile*

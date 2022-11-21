@@ -1,8 +1,18 @@
+# simplified and modified from https://github.com/marketplace/actions/build-and-push-docker-images#git-context
 name: RRTMGP Base Images Build
-run-name: CI/CD for RRTMGP images
-on: [push]
+
+on:
+  push:
+    branches:
+      - 'cicd'
+
 jobs:
-  Explore-GitHub-Actions:
+  docker:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "just ran CI!"
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: false
+          tags: user/app:latest

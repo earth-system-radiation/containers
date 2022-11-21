@@ -1,4 +1,3 @@
-# simplified and modified from https://github.com/earth-system-radiation/containers
 name: RRTMGP Base Images Build
 run-name: CI Image Build
 on: [push]

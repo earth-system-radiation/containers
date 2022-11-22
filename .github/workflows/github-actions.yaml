@@ -7,12 +7,12 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      # - name: ifort images build
-      #   run: |
-      #     docker build . -t minimal-compiler:ifort -f Dockerfile-ifort-minimal
-      #     docker build . -t add-netcdf:ifort -f Dockerfile-add-netcdf --build-arg COMPILER=ifort
-      #     docker build . -t rte-rrtmgp-ci:ifort -f Dockerfile-add-python --build-arg COMPILER=ifort
-      #     docker tag rte-rrtmgp-ci:ifort earthsystemradiation/rte-rrtmgp-ci:ifort
+      - name: ifort images build
+        run: |
+          docker build . -t minimal-compiler:ifort -f Dockerfile-ifort-minimal
+          docker build . -t add-netcdf:ifort -f Dockerfile-add-netcdf --build-arg COMPILER=ifort
+          docker build . -t rte-rrtmgp-ci:ifort -f Dockerfile-add-python --build-arg COMPILER=ifort
+          docker tag rte-rrtmgp-ci:ifort earthsystemradiation/rte-rrtmgp-ci:ifort
       #     docker push earthsystemradiation/rte-rrtmgp-ci:ifort
       - name: nvidia images build
         run: |

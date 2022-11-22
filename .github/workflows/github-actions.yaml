@@ -37,7 +37,7 @@ jobs:
           docker build . -t rte-rrtmgp-ci:ifort -f Dockerfile-add-python --build-arg COMPILER=ifort
           docker tag rte-rrtmgp-ci:ifort earthsystemradiation/rte-rrtmgp-ci:ifort
           docker push earthsystemradiation/rte-rrtmgp-ci:ifort
-          docker push ghcr.io/earth-system-radiation/rte-rrtmgp-ci:ifort
+#          docker push ghcr.io/earth-system-radiation/rte-rrtmgp-ci:ifort
 
       - name: nvidia images build and push
         run: |
@@ -48,7 +48,7 @@ jobs:
           docker build . -t rte-rrtmgp-ci:nvfortran -f Dockerfile-add-python --build-arg COMPILER=nvfortran
           docker tag rte-rrtmgp-ci:nvfortran earthsystemradiation/rte-rrtmgp-ci:nvfortran
           docker push earthsystemradiation/rte-rrtmgp-ci:nvfortran
-          docker push ghcr.io/earth-system-radiation/rte-rrtmgp-ci:nvfortran
+#          docker push ghcr.io/earth-system-radiation/rte-rrtmgp-ci:nvfortran
 
       # because we don't use the default `Dockerfile` and instead
       # pass `-f Dockerfile-*`, the build step with `build-push-action`

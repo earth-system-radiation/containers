@@ -15,7 +15,7 @@ RUN apt-get update \
 
 # Install essential packages
 #   we install netCDF4 instead of xarray[io] to omit unnecessary packages
-RUN pip3 install \
+RUN pip3 install  --break-system-packages \
       dask[array] \
       netCDF4 \
       numpy \
@@ -23,7 +23,7 @@ RUN pip3 install \
 
 # Install packages for the validation plot generation
 #   we install scipy instead of xarray[accel] to omit unnecessary packages
-RUN pip3 install \
+RUN pip3 install  --break-system-packages \
       colorcet \
       matplotlib \
       scipy \

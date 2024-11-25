@@ -6,8 +6,8 @@ on: [push]
 jobs:
   docker:
     strategy:
+      fail-fast: false
       matrix:
-        fail-fast: false 
         toolchain:  [oneapi, nvhpc]
     runs-on: ubuntu-latest
     steps:

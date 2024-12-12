@@ -13,13 +13,15 @@ RUN apt-get update \
       gcc \
       libc-dev \
       make \
+      cmake \ 
+      ninja-build
  && curl https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
       | gpg --dearmor > /usr/share/keyrings/oneapi-archive-keyring.gpg \
  && echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" > /etc/apt/sources.list.d/oneAPI.list \
  && apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get --yes install --no-install-recommends \
-      intel-oneapi-compiler-dpcpp-cpp-${ONEAPI_VERSION} \
-      intel-oneapi-compiler-fortran-${ONEAPI_VERSION} \
+ && DEBIAN_FRONTEND=noninteractive apt-get --yes install --no-install-recommends intel-fortran-essentials
+#      intel-oneapi-compiler-dpcpp-cpp-${ONEAPI_VERSION} \
+#      intel-oneapi-compiler-fortran-${ONEAPI_VERSION} \
  && rm -rf /var/lib/apt/lists/*
 
 ENV PATH="/opt/intel/oneapi/compiler/${ONEAPI_VERSION}/bin:${PATH}"

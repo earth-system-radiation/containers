@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 ARG ONEAPI_VERSION='2025.3'
 
@@ -19,7 +19,6 @@ RUN apt-get update \
 
 # See https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2025-2/hpc-apt.html#HPC-APT 
 
-# download the key to system keyring
 RUN wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
      | gpg --dearmor \
      | tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null \

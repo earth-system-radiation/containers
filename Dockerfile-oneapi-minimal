@@ -20,9 +20,8 @@ RUN apt-get update \
 # See https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2025-2/hpc-apt.html#HPC-APT 
 
 # download the key to system keyring
-RUN wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB 
-#     | gpg --dearmor
-#     | sudo tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
+RUN wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
+     | gpg --dearmor | sudo tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
 RUN echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" \
      | sudo tee /etc/apt/sources.list.d/oneAPI.list 
 RUN DEBIAN_FRONTEND=noninteractive apt-get --yes install --no-install-recommends \
